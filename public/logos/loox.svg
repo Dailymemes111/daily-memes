@@ -1,0 +1,5 @@
+<svg width="240" height="80" viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="80" rx="16" fill="#0f172a" />
+  <path d="M31 20v40h28v-8H39V20h-8z" fill="#8de0ff" />
+  <text x="145" y="50" text-anchor="middle" fill="#e0fbff" font-size="27" font-family="Arial, sans-serif" font-weight="700">Loox</text>
+</svg>

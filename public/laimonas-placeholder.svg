@@ -1,0 +1,17 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0f1a" />
+      <stop offset="100%" stop-color="#1a0e3a" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#6C63FF" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#00CFFF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)" />
+  <rect width="800" height="800" fill="url(#glow)" />
+  <circle cx="400" cy="285" r="130" fill="#F0F0FF" fill-opacity="0.88" />
+  <path d="M200 720c22-140 118-228 200-228s178 88 200 228" fill="#F0F0FF" fill-opacity="0.88" />
+  <text x="50%" y="760" text-anchor="middle" fill="#F0F0FF" fill-opacity="0.7" font-size="36" font-family="Arial, sans-serif">Dailymemes111</text>
+</svg>
