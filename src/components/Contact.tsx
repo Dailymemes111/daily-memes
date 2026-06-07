@@ -1,13 +1,7 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
 import { FormEvent, useRef, useState } from "react";
 import { siteData } from "@/data/content";
-
-// TODO: Replace with real EmailJS credentials.
-const SERVICE_ID = "YOUR_SERVICE_ID";
-const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
 
@@ -18,24 +12,36 @@ export default function Contact() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!formRef.current) {
-      return;
-    }
+    if (!formRef.current) return;
 
     setSubmitState("loading");
     setMessage("");
 
+    const formData = new FormData(formRef.current);
+    const body = Object.fromEntries(formData.entries());
+
     try {
-      await emailjs.sendForm(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        formRef.current,
-        PUBLIC_KEY,
-      );
-      formRef.current.reset();
-      setSubmitState("success");
-      setMessage("Thanks for reaching out. Your message has been sent.");
-    } catch {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      const data = await res.json();
+      console.log("/api/send-email response:", res.status, data);
+
+      if (res.ok) {
+        formRef.current.reset();
+        setSubmitState("success");
+        setMessage("Thanks for reaching out. Your message has been sent.");
+      } else {
+        setSubmitState("error");
+        setMessage(
+          "Something went wrong while sending your message. Please try again.",
+        );
+      }
+    } catch (err) {
+      console.error("send-email error:", err);
       setSubmitState("error");
       setMessage(
         "Something went wrong while sending your message. Please try again.",

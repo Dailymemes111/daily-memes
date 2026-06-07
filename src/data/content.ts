@@ -73,8 +73,21 @@ What really helped me stand out was developing my own unique "try not to laugh" 
     },
   ],
 
-  contactEmail: "YOUR_EMAIL@example.com",
+  contactEmail: "info@dailymemes111.com",
   social: {
+    instagram: "https://www.instagram.com/dailymemes111_tiktok/",
+    youtube: "https://www.youtube.com/@Dailymemes111",
+    x: "https://x.com/Dailymemes111_",
     tiktok: "https://www.tiktok.com/@dailymemes111",
+    whatsapp: "https://wa.me/37067863770",
+  },
+
+  business: {
+    hours: "Mon-Fri: 9am-10pm",
+    address: "Vilnius, Lithuania",
+  },
+  contact: {
+    email: "info@dailymemes111.com",
+    whatsappNumber: "+37067863770",
   },
 };

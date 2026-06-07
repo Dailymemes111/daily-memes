@@ -39,6 +39,13 @@ export default function Hero() {
     }, 450);
   };
 
+  const handleJoinCta = () => {
+    const tiktokUrl = siteData?.social?.tiktok;
+    if (!tiktokUrl) return;
+
+    window.open(tiktokUrl, "_blank", "noopener,noreferrer");
+  };
+
   useEffect(() => {
     const section = sectionRef.current;
     const canvas = canvasRef.current;
@@ -351,14 +358,25 @@ export default function Hero() {
           </span>
         </p>
 
-        <button
-          type="button"
-          data-hero="cta"
-          onClick={handleContactCta}
-          className="mt-6 inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(108,99,255,0.35)] transition-all hover:scale-[1.03] hover:shadow-[0_0_42px_rgba(108,99,255,0.55)] sm:mt-8 sm:px-6 sm:py-3"
-        >
-          Contact Us
-        </button>
+        <div className="mt-6 flex gap-3 sm:mt-8">
+          <button
+            type="button"
+            data-hero="cta"
+            onClick={handleContactCta}
+            className="inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(108,99,255,0.35)] transition-all hover:scale-[1.03] hover:shadow-[0_0_42px_rgba(108,99,255,0.55)] sm:px-6 sm:py-3"
+          >
+            Contact Us
+          </button>
+
+          <button
+            type="button"
+            data-hero="cta"
+            onClick={handleJoinCta}
+            className="inline-flex items-center justify-center rounded-full border border-border bg-background/40 px-5 py-2.5 text-sm font-semibold text-textPrimary transition-all hover:scale-[1.03] sm:px-6 sm:py-3"
+          >
+            Join Us
+          </button>
+        </div>
       </div>
     </section>
   );
