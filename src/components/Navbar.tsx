@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { siteData } from "@/data/content";
 import { cn } from "@/lib/utils";
@@ -32,12 +33,16 @@ export default function Navbar() {
         scrolled && "border-border bg-surface/80 backdrop-blur-sm",
       )}
     >
-      <nav className="mx-auto flex h-16 w-full max-w-[1400px] items-center justify-between px-5 md:px-8">
-        <a
-          href="#"
-          className="font-display text-xl font-bold tracking-tight text-textPrimary"
-        >
-          {siteData.name}
+      <nav className="mx-auto flex h-28 w-full max-w-[1500px] items-center justify-between px-5 md:px-8">
+        <a href="#" className="flex items-center">
+          <Image
+            src="/logos/logo.png"
+            alt={`${siteData.name} logo`}
+            width={72}
+            height={72}
+            className="h-14 w-14 rounded-2xl object-contain md:h-36 md:w-36"
+            priority
+          />
         </a>
         <ul className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (

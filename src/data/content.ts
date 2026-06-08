@@ -5,7 +5,6 @@ export const siteData = {
   bio: `Hi, I'm Laimonas — a content creator and digital marketer with over 10 years of experience in social media, especially on TikTok. I've built a strong personal brand by combining creativity with strategy, and I specialize in advertising, video production, and voiceovers for promotional content.
 
 What really helped me stand out was developing my own unique "try not to laugh" style, which quickly caught people's attention and played a big role in growing my audience. That distinct approach is what brought me to where I am today — with over 1 million followers on TikTok and a community that keeps expanding every day.`,
-  // TODO: Replace email and profile photo path if the filename differs.
   profilePhoto: "/images/Laimonas.jpeg",
 
   metrics: [
@@ -16,60 +15,110 @@ What really helped me stand out was developing my own unique "try not to laugh" 
   ],
 
   brands: [
-    { name: "Nickelodeon", logo: "/logos/nickelodeon.svg" },
-    { name: "Kling AI", logo: "/logos/kling-ai.svg" },
-    { name: "Hailuo AI", logo: "/logos/hailuo-ai.svg" },
-    { name: "Facemoji", logo: "/logos/facemoji.svg" },
-    { name: "Loox", logo: "/logos/loox.svg" },
-    { name: "HIX Bypass", logo: "/logos/hix-bypass.svg" },
+    {
+      name: "Nickelodeon",
+      logo: "/logos/nickelodeon.png",
+      logoClassName: "h-30 w-36",
+    },
+    {
+      name: "Kling AI",
+      logo: "/logos/kling-ai.png",
+      logoClassName: "h-20 w-40",
+    },
+    {
+      name: "Hailuo AI",
+      logo: "/logos/hailuo-ai.png",
+      logoClassName: "h-20 w-[148px]",
+    },
+    {
+      name: "Facemoji",
+      logo: "/logos/facemoji.png",
+      logoClassName: "h-20 w-[132px]",
+    },
+    {
+      name: "Loox",
+      logo: "/logos/loox.png",
+      logoClassName: "h-20 w-[120px] ",
+    },
+    {
+      name: "HIX Bypass",
+      logo: "/logos/hix-bypass.png",
+      logoClassName: "h-20 w-[250px] ",
+    },
   ],
 
   // Replace with actual TikTok embed URLs once provided
   topVideos: [
     {
-      title: "Viral Video #1",
+      title: "Try Not to Laugh Challenge - Extreme Mode",
       embedUrl: "PLACEHOLDER_TIKTOK_EMBED_1",
-      views: "50M+",
-      tiktokUrl:
-        "https://www.tiktok.com/@thedodo/video/7485752232156138782?is_from_webapp=1&sender_device=pc",
+      tiktokUrl: "https://www.tiktok.com/@dailymemes111",
+      videoSrc: "/videos/top-rated/video-1.mp4",
+      comment: "Fast-cut viral moment from the top-rated collection.",
+      link: "https://www.tiktok.com/@dailymemes111/video/7078333951688936710?is_from_webapp=1&web_id=7647872378307462678%5C",
+      likes: "2.1M",
+      comments: "23.7K",
+      shares: "161.7K",
+      saves: "195.7K",
     },
     {
-      title: "Viral Video #2",
+      title: "Try Not to Laugh Challenge - Easy Mode",
       embedUrl: "PLACEHOLDER_TIKTOK_EMBED_2",
-      views: "38M+",
-      tiktokUrl:
-        "https://www.tiktok.com/@thedodo/video/7485752232156138782?is_from_webapp=1&sender_device=pc",
+      link: "https://www.tiktok.com/@dailymemes111/video/7446819903727832342?is_from_webapp=1&sender_device=pc&web_id=7647872378307462678%5C",
+      videoSrc: "/videos/top-rated/video-2.mp4",
+      comment: "High-energy reaction clip with a strong punchline.",
+      likes: "606.3K",
+      comments: "4433",
+      shares: "207.5K",
+      saves: "78.4K",
     },
     {
-      title: "Viral Video #3",
+      title: "Try Not to Laugh Challenge - Easy Mode",
       embedUrl: "PLACEHOLDER_TIKTOK_EMBED_3",
-      views: "27M+",
-      tiktokUrl:
-        "https://www.tiktok.com/@thedodo/video/7485752232156138782?is_from_webapp=1&sender_device=pc",
+      link: "https://www.tiktok.com/@dailymemes111/video/7549238362629049622?is_from_webapp=1&web_id=7647872378307462678%5C",
+      videoSrc: "/videos/top-rated/video-3.mp4",
+      comment: "A polished short-form video with strong retention hooks.",
+      likes: "661K",
+      comments: "2702",
+      shares: "94.9K",
+      saves: "42.3K",
     },
   ],
 
   brandVideos: [
     {
-      title: "Kling AI Collab",
+      title: "Catch the summer wave with KlingAI’s SurfSurf effect! ",
       embedUrl: "PLACEHOLDER_BRAND_EMBED_1",
+      videoSrc: "/videos/collaborations/video-4.mp4",
+      link: "https://www.tiktok.com/@dailymemes111/video/7522480275947883798?is_from_webapp=1&web_id=7647872378307462678%5C",
+      likes: "661",
+      comments: "21",
+      shares: "41",
+      saves: "93",
       brand: "Kling AI",
-      tiktokUrl:
-        "https://www.tiktok.com/@thedodo/video/7485752232156138782?is_from_webapp=1&sender_device=pc",
     },
     {
-      title: "Nickelodeon Collab",
+      title: "Made with @Hailuo AI (MiniMax)",
       embedUrl: "PLACEHOLDER_BRAND_EMBED_2",
+      videoSrc: "/videos/collaborations/video-5.mp4",
+      link: "http://tiktok.com/@dailymemes111/video/7496163529456700694?is_from_webapp=1&web_id=7647872378307462678%5C",
+      likes: "835",
+      comments: "34",
+      shares: "58",
+      saves: "155",
       brand: "Nickelodeon",
-      tiktokUrl:
-        "https://www.tiktok.com/@thedodo/video/7485752232156138782?is_from_webapp=1&sender_device=pc",
     },
     {
-      title: "Hailuo AI Collab",
+      title:
+        "No Filters, Free to Play and it's Available in Multiple Languages with @TipsyChat",
       embedUrl: "PLACEHOLDER_BRAND_EMBED_3",
+      videoSrc: "/videos/collaborations/video-6.mp4",
+      link: "https://www.tiktok.com/@dailymemes111/video/7475767425703677206?is_from_webapp=1&web_id=7647872378307462678%5C",
+      likes: "525",
+      comments: "18",
+      shares: "10",
+      saves: "62",
       brand: "Hailuo AI",
-      tiktokUrl:
-        "https://www.tiktok.com/@thedodo/video/7485752232156138782?is_from_webapp=1&sender_device=pc",
     },
   ],
 

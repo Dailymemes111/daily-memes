@@ -10,8 +10,15 @@ gsap.registerPlugin(ScrollTrigger);
 type VideoCardProps = {
   id: string;
   title: string;
-  embedUrl: string;
-  tiktokUrl: string;
+  embedUrl?: string;
+  tiktokUrl?: string;
+  videoSrc?: string;
+  comment?: string;
+  link?: string;
+  likes?: string;
+  comments?: string;
+  shares?: string;
+  saves?: string;
   isPlaying: boolean;
   onPlay: (id: string) => void;
   onStop: () => void;
@@ -42,13 +49,22 @@ function VideoCard({
   title,
   embedUrl,
   tiktokUrl,
+  videoSrc,
+  comment,
+  link,
+  likes,
+  comments,
+  shares,
+  saves,
   isPlaying,
   onPlay,
   onStop,
 }: VideoCardProps) {
-  const isPlaceholder = embedUrl.startsWith("PLACEHOLDER");
-  const fallbackEmbedUrl = getTikTokEmbedUrl(tiktokUrl);
-  const resolvedEmbedUrl = isPlaceholder ? fallbackEmbedUrl : embedUrl;
+  const isPlaceholder = Boolean(embedUrl && embedUrl.startsWith("PLACEHOLDER"));
+  const fallbackEmbedUrl = tiktokUrl ? getTikTokEmbedUrl(tiktokUrl) : null;
+  const resolvedEmbedUrl = isPlaceholder
+    ? fallbackEmbedUrl
+    : (embedUrl ?? null);
 
   const finalEmbedUrl = useMemo(() => {
     if (!resolvedEmbedUrl) {
@@ -62,9 +78,17 @@ function VideoCard({
   const showPreview = !isPlaying;
 
   return (
-    <article className="group min-w-[270px] max-w-[340px] flex-1 rounded-3xl border border-border/90 bg-gradient-to-b from-[#14142a] via-surface to-[#0a0a14] p-3.5 shadow-[0_18px_55px_rgba(0,0,0,0.42)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/50 md:min-w-0 md:max-w-none">
-      <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-white/5 bg-black/60">
-        {showPreview ? (
+    <article className="group min-w-[270px] max-w-[320px] flex-1 rounded-3xl border border-border/90 bg-gradient-to-b from-[#14142a] via-surface to-[#0a0a14] p-2.5 shadow-[0_18px_55px_rgba(0,0,0,0.42)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/50 md:min-w-0 md:max-w-none">
+      <div className="relative aspect-[9/15] overflow-hidden rounded-2xl border border-white/5 bg-black/60">
+        {videoSrc ? (
+          <video
+            src={videoSrc}
+            controls
+            playsInline
+            preload="metadata"
+            className="h-full w-full object-cover"
+          />
+        ) : showPreview ? (
           <div
             className="relative flex h-full items-center justify-center overflow-hidden"
             style={{ backgroundImage: getPlaceholderGradient(title) }}
@@ -76,13 +100,13 @@ function VideoCard({
                 onClick={() => {
                   if (resolvedEmbedUrl) {
                     onPlay(id);
-                  } else {
+                  } else if (tiktokUrl) {
                     window.open(tiktokUrl, "_blank", "noopener,noreferrer");
                   }
                 }}
                 className="flex h-16 w-16 items-center justify-center rounded-full border border-white/35 bg-black/35 backdrop-blur-sm transition-colors hover:border-accent"
                 aria-label={
-                  resolvedEmbedUrl ? `Play ${title}` : `Open ${title} on TikTok`
+                  resolvedEmbedUrl ? `Play ${title}` : `Open ${title}`
                 }
               >
                 <span className="ml-0.5 text-2xl text-white">▶</span>
@@ -108,6 +132,47 @@ function VideoCard({
             </button>
           </>
         )}
+      </div>
+
+      <div className="mt-3 flex h-[8.5rem] flex-col justify-between px-1 pb-1">
+        <div className="space-y-2">
+          <h4 className="text-sm font-semibold text-textPrimary">{title}</h4>
+          {comment ? <p className="text-xs text-textMuted">{comment}</p> : null}
+
+          <div className="flex flex-wrap gap-2 py-1 text-[11px] text-textMuted">
+            {likes ? (
+              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
+                ❤️ {likes}
+              </span>
+            ) : null}
+            {comments ? (
+              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
+                💬 {comments}
+              </span>
+            ) : null}
+            {shares ? (
+              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
+                ↗ {shares}
+              </span>
+            ) : null}
+            {saves ? (
+              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
+                🔖 {saves}
+              </span>
+            ) : null}
+          </div>
+        </div>
+
+        {link ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+            className=" inline-flex items-center text-xs font-semibold text-accent hover:text-accentBlue"
+          >
+            Watch link ↗
+          </a>
+        ) : null}
       </div>
     </article>
   );
@@ -150,15 +215,22 @@ export default function Videos() {
   return (
     <section
       id="videos"
-      className="mx-auto w-full max-w-[1400px] px-6 py-20 md:px-8 md:py-28"
+      className="mx-auto w-full max-w-[1500px] px-6 py-20 md:px-8 md:py-28"
     >
       <div>
+        <p
+          className="mb-3 text-xs uppercase tracking-[0.3em] text-accentBlue"
+          data-videos-head
+        >
+          Videos
+        </p>
         <h3
-          className="mb-5 font-display text-2xl font-bold text-textPrimary md:mb-6 md:text-4xl"
+          className="mb-4 font-display text-2xl font-bold text-textPrimary md:text-4xl "
           data-videos-head
         >
           Top Performing Content
         </h3>
+
         <div className="-mx-2 flex snap-x snap-mandatory gap-4 overflow-x-auto px-2 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
           {siteData.topVideos.map((video) => (
             <div key={video.title} data-video-card className="snap-start">
@@ -166,7 +238,12 @@ export default function Videos() {
                 id={`top-${video.title}`}
                 title={video.title}
                 embedUrl={video.embedUrl}
-                tiktokUrl={video.tiktokUrl}
+                videoSrc={video.videoSrc}
+                link={video.link}
+                likes={video.likes}
+                comments={video.comments}
+                shares={video.shares}
+                saves={video.saves}
                 isPlaying={activeVideoId === `top-${video.title}`}
                 onPlay={setActiveVideoId}
                 onStop={() => setActiveVideoId(null)}
@@ -177,9 +254,13 @@ export default function Videos() {
       </div>
 
       <div className="mt-14">
-        <h3 className="mb-6 font-display text-2xl font-bold text-textPrimary md:text-4xl">
+        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-accentBlue">
+          Collaborations
+        </p>
+        <h3 className="mb-4 font-display text-2xl font-bold text-textPrimary md:text-4xl">
           Brand Collaborations
         </h3>
+
         <div className="-mx-2 flex snap-x snap-mandatory gap-4 overflow-x-auto px-2 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
           {siteData.brandVideos.map((video) => (
             <div key={video.title} data-video-card className="snap-start">
@@ -187,7 +268,12 @@ export default function Videos() {
                 id={`brand-${video.title}`}
                 title={video.title}
                 embedUrl={video.embedUrl}
-                tiktokUrl={video.tiktokUrl}
+                videoSrc={video.videoSrc}
+                link={video.link}
+                likes={video.likes}
+                comments={video.comments}
+                shares={video.shares}
+                saves={video.saves}
                 isPlaying={activeVideoId === `brand-${video.title}`}
                 onPlay={setActiveVideoId}
                 onStop={() => setActiveVideoId(null)}

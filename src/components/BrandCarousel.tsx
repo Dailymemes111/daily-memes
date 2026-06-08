@@ -33,7 +33,7 @@ export default function BrandCarousel() {
   return (
     <section
       id="collabs"
-      className="mx-auto w-full max-w-[1400px] px-6 py-20 md:px-8 md:py-24"
+      className="mx-auto w-full max-w-[1500px] px-6 py-20 md:px-8 md:py-24"
     >
       <h2 className="mb-8 text-center font-display text-3xl font-bold text-textPrimary md:text-5xl">
         Trusted By
@@ -48,15 +48,18 @@ export default function BrandCarousel() {
             {repeatedBrands.map((brand, index) => (
               <div
                 key={`${brand.name}-${index}`}
-                className="flex items-center px-3"
+                className="flex items-center gap-3 px-6"
               >
-                <div className="rounded-xl border border-border/80 bg-[#0c1022] p-2.5 transition-transform duration-300 hover:scale-105 hover:border-accent/50">
+                <div className="rounded-xl  ">
                   <Image
                     src={brand.logo}
                     alt={`${brand.name} logo`}
-                    width={140}
-                    height={46}
-                    className="h-11 w-[140px] object-contain"
+                    width={180}
+                    height={60}
+                    className={
+                      brand.logoClassName ||
+                      "h-10 w-[140px] object-contain md:h-12 md:w-[160px]"
+                    }
                   />
                 </div>
               </div>

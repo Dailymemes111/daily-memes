@@ -69,17 +69,17 @@ export default function Stats() {
   return (
     <section
       id="stats"
-      className="mx-auto w-full max-w-[1400px] px-6 py-20 md:px-8 md:py-28"
+      className="mx-auto w-full max-w-[1500px] px-6 py-20 md:px-8 md:py-28"
     >
       <h2 className="mb-10 text-center font-display text-3xl font-bold text-textPrimary md:text-5xl">
         Impact
       </h2>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-6">
         {siteData.metrics.map((metric, index) => (
           <article
             key={metric.label}
             data-stat-card
-            className="rounded-2xl border border-border bg-surface/70 p-5 md:p-6"
+            className="card-lift shimmer-on-hover animate-float-slow rounded-2xl border border-border bg-surface/70 p-5 md:p-6"
           >
             <div className="mb-4 h-0.5 w-12 bg-gradient-to-r from-accent to-accentBlue" />
             <p

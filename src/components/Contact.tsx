@@ -54,9 +54,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="mx-auto w-full max-w-[1400px] px-6 py-20 md:px-8 md:py-28"
+      className="mx-auto w-full max-w-[1500px] px-6 py-20 md:px-8 md:py-28"
     >
-      <div className="mx-auto w-full max-w-[560px] rounded-3xl border border-border bg-surface/75 p-6 md:p-8">
+      <div className="mx-auto w-full max-w-[560px] rounded-3xl border border-border bg-surface/75 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] animate-float-slow md:p-8">
         <h2 className="text-center font-display text-3xl font-bold text-textPrimary md:text-5xl">
           Let&apos;s Work Together
         </h2>
@@ -111,7 +111,15 @@ export default function Contact() {
         ) : null}
 
         <p className="mt-7 text-sm text-textMuted">
-          Prefer email? Reach out directly at {siteData.contactEmail}
+          Prefer email? Reach out directly at{" "}
+          <span>
+            <a
+              href={`mailto:${siteData.contactEmail}`}
+              className=" text-primary underline transition hover:text-accent"
+            >
+              {siteData.contactEmail}
+            </a>
+          </span>
         </p>
       </div>
     </section>

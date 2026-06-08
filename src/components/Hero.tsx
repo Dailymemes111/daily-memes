@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRightIcon, SparklesIcon } from "@heroicons/react/24/solid";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { siteData } from "@/data/content";
@@ -80,11 +81,6 @@ export default function Hero() {
         .from(
           "[data-hero='subtitle']",
           { opacity: 0, y: 40, duration: 0.65 },
-          "-=0.45",
-        )
-        .from(
-          "[data-hero='cta']",
-          { opacity: 0, y: 40, duration: 0.6 },
           "-=0.45",
         );
 
@@ -327,14 +323,8 @@ export default function Hero() {
       {/* TODO: If needed later, this cinematic layer can be replaced with a branded slow-motion background plate. */}
       <div
         ref={contentRef}
-        className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-col items-center text-center"
+        className="relative z-30 mx-auto flex w-full max-w-[1500px] flex-col items-center text-center"
       >
-        <p
-          data-hero="label"
-          className="mb-4 text-[10px] font-medium uppercase tracking-[0.24em] text-accent sm:mb-5 sm:text-xs sm:tracking-[0.3em]"
-        >
-          OFFICIAL MEDIA KIT
-        </p>
         <h1
           ref={titleRef}
           data-hero="title"
@@ -358,22 +348,30 @@ export default function Hero() {
           </span>
         </p>
 
-        <div className="mt-6 flex gap-3 sm:mt-8">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3  sm:mt-8">
           <button
             type="button"
             data-hero="cta"
             onClick={handleContactCta}
-            className="inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(108,99,255,0.35)] transition-all hover:scale-[1.03] hover:shadow-[0_0_42px_rgba(108,99,255,0.55)] sm:px-6 sm:py-3"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent via-accent to-accentBlue px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_35px_rgba(108,99,255,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:shadow-[0_0_45px_rgba(108,99,255,0.75)] sm:px-6 sm:py-3"
           >
             Contact Us
+            <ArrowRightIcon className="h-4 w-4" />
           </button>
 
           <button
             type="button"
             data-hero="cta"
             onClick={handleJoinCta}
-            className="inline-flex items-center justify-center rounded-full border border-border bg-background/40 px-5 py-2.5 text-sm font-semibold text-textPrimary transition-all hover:scale-[1.03] sm:px-6 sm:py-3"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#151522]/98 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(0,0,0,0.45)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:border-accent/50 hover:bg-[#1b1b2d]/98 sm:px-6 sm:py-3"
           >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-4 w-4 fill-current text-[#69C9D0]"
+              aria-hidden
+            >
+              <path d="M14.5 3.3c1.3 1.7 2.1 3.7 2.1 6.1 0 5.2-4.1 9.4-9.3 9.4-1.4 0-2.8-.3-4-.9.4.1.8.1 1.2.1 2.7 0 5.2-1.7 6.2-4.1-2.4-.1-4.5-1.7-5.2-4.1.4.1.8.1 1.2.1.6 0 1.1-.1 1.7-.3-2.3-.5-4-2.5-4-4.9 0-1 .3-2 .8-2.9 2.4 3 6.1 4.9 10.2 5.1-.1-.4-.2-.8-.2-1.2 0-2.7 2.2-4.9 4.9-4.9 1.4 0 2.7.6 3.6 1.5-.6-.2-1.2-.4-1.8-.6.7.8 1.1 1.8 1.1 2.9 0 .9-.3 1.8-.8 2.5.7-.1 1.4-.3 2-.5-.5.8-1.1 1.5-1.8 2.1z" />
+            </svg>
             Join Us
           </button>
         </div>
