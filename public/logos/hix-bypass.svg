@@ -1,5 +1,0 @@
-<svg width="240" height="80" viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
-  <rect width="240" height="80" rx="16" fill="#111111" />
-  <path d="M28 24h10l6 9 6-9h10L49 40l11 16H50l-6-9-6 9H28l11-16-11-16z" fill="#6C63FF" />
-  <text x="155" y="50" text-anchor="middle" fill="#f5f3ff" font-size="24" font-family="Arial, sans-serif" font-weight="700">HIX Bypass</text>
-</svg>

@@ -1,5 +1,0 @@
-<svg width="240" height="80" viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
-  <rect width="240" height="80" rx="16" fill="#0b1025" />
-  <path d="M34 20v40h8V46l15 14h11L50 42l18-22H57L42 37V20h-8z" fill="#6C63FF" />
-  <text x="150" y="50" text-anchor="middle" fill="#d7dcff" font-size="25" font-family="Arial, sans-serif" font-weight="700">Kling AI</text>
-</svg>
