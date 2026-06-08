@@ -138,41 +138,41 @@ function VideoCard({
         <div className="space-y-2">
           <h4 className="text-sm font-semibold text-textPrimary">{title}</h4>
           {comment ? <p className="text-xs text-textMuted">{comment}</p> : null}
-
-          <div className="flex flex-wrap gap-2 py-1 text-[11px] text-textMuted">
-            {likes ? (
-              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
-                ❤️ {likes}
-              </span>
-            ) : null}
-            {comments ? (
-              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
-                💬 {comments}
-              </span>
-            ) : null}
-            {shares ? (
-              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
-                ↗ {shares}
-              </span>
-            ) : null}
-            {saves ? (
-              <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
-                🔖 {saves}
-              </span>
+          <div className="flex flex-wrap gap-2 py-1 text-[11px] text-textMuted justify-between">
+            <div className="flex flex-wrap gap-2 py-1 text-[11px] text-textMuted">
+              {likes ? (
+                <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
+                  ❤️ {likes}
+                </span>
+              ) : null}
+              {comments ? (
+                <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
+                  💬 {comments}
+                </span>
+              ) : null}
+              {shares ? (
+                <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
+                  ↗ {shares}
+                </span>
+              ) : null}
+              {saves ? (
+                <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1">
+                  🔖 {saves}
+                </span>
+              ) : null}
+            </div>
+            {link ? (
+              <a
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                className=" inline-flex items-center text-xs font-semibold text-accent hover:text-accentBlue"
+              >
+                Watch link ↗
+              </a>
             ) : null}
           </div>
         </div>
-
-        {link ? (
-          <a
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-            className=" inline-flex items-center text-xs font-semibold text-accent hover:text-accentBlue"
-          >
-            Watch link ↗
-          </a>
-        ) : null}
       </div>
     </article>
   );
