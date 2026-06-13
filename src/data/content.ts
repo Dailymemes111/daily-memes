@@ -23,7 +23,7 @@ What really helped me stand out was developing my own unique "try not to laugh" 
     {
       name: "Polymarket",
       logo: "/logos/polymarket.png",
-      logoClassName: "h-20 w-[132px]",
+      logoClassName: "h-20 w-[122px]",
     };
     {
       name: "Kling AI",
