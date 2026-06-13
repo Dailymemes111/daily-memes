@@ -27,8 +27,8 @@ What really helped me stand out was developing my own unique "try not to laugh" 
     },
     {
       name: "Kling AI",
-      logo: "/logos/klingaa.png",
-      logoClassName: "h-20 w-[120px]",
+      logo: "/logos/klinga",
+      logoClassName: "h-20 w-4",
     },
     {
       name: "Hailuo AI",
