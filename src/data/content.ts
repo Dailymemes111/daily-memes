@@ -33,7 +33,7 @@ What really helped me stand out was developing my own unique "try not to laugh" 
     {
       name: "Facemoji",
       logo: "/logos/facemoji.png",
-      logoClassName: "h-20 w-[100px]",
+      logoClassName: "h-20 w-[132px]",
     },
     {
       name: "Loox",
