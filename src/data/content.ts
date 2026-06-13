@@ -10,7 +10,7 @@ What really helped me stand out was developing my own unique "try not to laugh" 
   metrics: [
     { value: "1.2M+", label: "Followers" },
     { value: "950M+", label: "Total Views" },
-    { value: "25M+", label: "Reactions" },
+    { value: "32M+", label: "Reactions" },
     { value: "465+", label: "Videos Posted" },
   ],
 
