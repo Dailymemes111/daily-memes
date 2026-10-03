@@ -1,8 +1,8 @@
 export const siteData = {
   name: "Dailymemes111",
   tagline: "Professional Voiceover, Video Ads & Social Media Growth",
-  taglineSub: "by Laimonas",
-  bio: `Hi, I'm Laimonas — a content creator and digital marketer with over 10 years of experience in social media, especially on TikTok. I've built a strong personal brand by combining creativity with strategy, and I specialize in advertising, video production, and voiceovers for promotional content.
+  taglineSub: "by Laimonas Vilčinskas",
+  bio: `Hi, I'm Laimonas Vilčinskas — a content creator and digital marketer with over 10 years of experience in social media, especially on TikTok. I've built a strong personal brand by combining creativity with strategy, and I specialize in advertising, video production, and voiceovers for promotional content.
 
 What really helped me stand out was developing my own unique "try not to laugh" style, which quickly caught people's attention and played a big role in growing my audience. That distinct approach is what brought me to where I am today — with over 1 million followers on TikTok and a community that keeps expanding every day.`,
   profilePhoto: "/images/Laimonas.jpeg",
