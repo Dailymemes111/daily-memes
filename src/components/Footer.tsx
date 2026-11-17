@@ -184,3 +184,8 @@ export default function Footer() {
                   <span>{siteData.business?.hours || "Mon-Fri: 9am-10pm"}</span>
                 </div>
               </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
