@@ -42,25 +42,41 @@ export default function BrandCarousel() {
 
       <div
         data-brand-shell
-        className="overflow-hidden rounded-2xl border border-border bg-gradient-to-b from-surface to-[#0c0c17] py-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
+        className="overflow-hidden rounded-2xl border border-border bg-gradient-to-b from-surface to-[#0c0c17] py-8 shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
       >
         <div className="group">
           <div className="flex min-w-max animate-ticker items-center group-hover:[animation-play-state:paused]">
             {repeatedBrands.map((brand, index) => (
               <div
                 key={`${brand.name}-${index}`}
-                className="flex items-center gap-3 px-6"
+                className="flex items-center justify-center px-8"
               >
-                <div className="rounded-xl  ">
+                <div
+                  style={{
+                    width: "180px",
+                    height: "70px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <Image
                     src={brand.logo}
                     alt={`${brand.name} logo`}
                     width={180}
-                    height={60}
-                    className={
-                      brand.logoClassName ||
-                      "h-10 w-[140px] object-contain md:h-12 md:w-[160px]"
-                    }
+                    height={70}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      filter: "brightness(0) invert(1)",
+                      transform:
+                        brand.name === "Nickelodeon"
+                          ? "scale(1.45)"
+                          : brand.name === "Temu"
+                          ? "scale(0.85)"
+                          : "scale(1)",
+                    }}
                   />
                 </div>
               </div>
