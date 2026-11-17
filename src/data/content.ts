@@ -8,7 +8,7 @@ What really helped me stand out was developing my own unique "try not to laugh" 
   profilePhoto: "/images/Laimonas.jpeg",
 
   metrics: [
-    { value: "1.2M+", label: "Followers" },
+    { value: "1.1M+", label: "Followers" },
     { value: "950M+", label: "Total Views" },
     { value: "32M+", label: "Reactions" },
     { value: "465+", label: "Videos Posted" },
@@ -18,22 +18,22 @@ What really helped me stand out was developing my own unique "try not to laugh" 
     {
       name: "Nickelodeon",
       logo: "/logos/nickelodeon.png",
-      logoClassName: "h-30 w-36",
+      logoClassName: "h-16 w-40 object-contain brightness-0 invert",
     },
     {
       name: "Polymarket",
       logo: "/logos/polymarket-logo-1.png",
-      logoClassName: "h-20 w-[120px]",
+      logoClassName: "h-16 w-44 object-contain brightness-0 invert",
     },
     {
       name: "Kling AI",
       logo: "/logos/kling-ai.png",
-      logoClassName: "h-20 w-40",
+      logoClassName: "h-16 w-40 object-contain brightness-0 invert",
     },
     {
       name: "Hailuo AI",
       logo: "/logos/hailuo-ai.png",
-      logoClassName: "h-20 w-[148px]",
+      logoClassName: "h-16 w-44 object-contain brightness-0 invert",
     },
     {
       name: "Facemoji",
@@ -41,14 +41,14 @@ What really helped me stand out was developing my own unique "try not to laugh" 
       logoClassName: "h-20 w-[132px]",
     },
     {
-      name: "Loox",
-      logo: "/logos/loox.png",
-      logoClassName: "h-20 w-[120px] ",
+      name: "Temu",
+      logo: "/logos/temu-logo.png",
+      logoClassName: "h-16 w-36 object-contain brightness-0 invert",
     },
     {
       name: "HIX Bypass",
       logo: "/logos/hix-bypass.png",
-      logoClassName: "h-20 w-[250px] ",
+      logoClassName: "h-16 w-36 object-contain brightness-0 invert",
     },
   ],
 
