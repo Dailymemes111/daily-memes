@@ -14,43 +14,34 @@ What really helped me stand out was developing my own unique "try not to laugh" 
     { value: "465+", label: "Videos Posted" },
   ],
 
-  brands: [
+    brands: [
     {
       name: "Nickelodeon",
-      logo: "/logos/nickelodeon.png",
-      logoClassName: "h-16 w-40 object-contain brightness-0 invert",
+      logo: "/logos/Nickelodeon new.png",
+      logoClassName: "h-24 w-48 object-contain",
+    },
+    {
+      name: "Temu",
+      logo: "/logos/Temu logo.png",
+      logoClassName: "h-20 w-44 object-contain",
     },
     {
       name: "Polymarket",
       logo: "/logos/polymarket-logo-1.png",
-      logoClassName: "h-16 w-44 object-contain brightness-0 invert",
+      logoClassName: "h-20 w-44 object-contain",
     },
     {
       name: "Kling AI",
       logo: "/logos/kling-ai.png",
-      logoClassName: "h-16 w-40 object-contain brightness-0 invert",
+      logoClassName: "h-20 w-44 object-contain",
     },
     {
       name: "Hailuo AI",
       logo: "/logos/hailuo-ai.png",
-      logoClassName: "h-16 w-44 object-contain brightness-0 invert",
-    },
-    {
-      name: "Facemoji",
-      logo: "/logos/facemoji.png",
-      logoClassName: "h-20 w-[132px]",
-    },
-    {
-      name: "Temu",
-      logo: "/logos/temu-logo.png",
-      logoClassName: "h-16 w-36 object-contain brightness-0 invert",
-    },
-    {
-      name: "HIX Bypass",
-      logo: "/logos/hix-bypass.png",
-      logoClassName: "h-16 w-36 object-contain brightness-0 invert",
+      logoClassName: "h-20 w-44 object-contain",
     },
   ],
+
 
   // Replace with actual TikTok embed URLs once provided
   topVideos: [
