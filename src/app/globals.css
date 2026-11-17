@@ -47,3 +47,6 @@ body::before {
     cursor: auto;
   }
 }
+img[src*="/logos/"] {
+  filter: brightness(0) invert(1) !important;
+}
