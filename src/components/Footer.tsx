@@ -184,6 +184,18 @@ export default function Footer() {
                   <span>{siteData.business?.hours || "Mon-Fri: 9am-10pm"}</span>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-textMuted sm:flex-row">
+            <p>
+              © {new Date().getFullYear()} {siteData.name} · {siteData.taglineSub}. All rights reserved.
+            </p>
+            <p className="inline-flex items-center gap-1.5 text-textPrimary/80">
+              <SparklesIcon className="h-4 w-4 text-accent" />
+              <span>Media Kit & Brand Collaborations</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
