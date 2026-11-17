@@ -49,12 +49,12 @@ export default function BrandCarousel() {
             {repeatedBrands.map((brand, index) => (
               <div
                 key={`${brand.name}-${index}`}
-                className="flex items-center justify-center px-10"
+                className="flex items-center justify-center px-5"
               >
                 <div
                   style={{
-                    width: "220px",
-                    height: "90px",
+                    width: "190px",
+                    height: "85px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -63,8 +63,8 @@ export default function BrandCarousel() {
                   <Image
                     src={brand.logo}
                     alt={`${brand.name} logo`}
-                    width={220}
-                    height={90}
+                    width={190}
+                    height={85}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -78,9 +78,9 @@ export default function BrandCarousel() {
                           : brand.name === "Hailuo AI"
                           ? "scale(1.5)"
                           : brand.name === "Polymarket"
-                          ? "scale(0.95)"
+                          ? "scale(0.78)"
                           : brand.name === "Temu"
-                          ? "scale(1.05)"
+                          ? "scale(1.0)"
                           : "scale(1.2)",
                     }}
                   />
@@ -93,4 +93,3 @@ export default function BrandCarousel() {
     </section>
   );
 }
-
