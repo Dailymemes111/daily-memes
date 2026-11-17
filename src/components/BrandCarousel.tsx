@@ -81,7 +81,7 @@ export default function BrandCarousel() {
                           ? "scale(0.78)"
                           : brand.name === "Temu"
                           ? "scale(1.0)"
-                          : "scale(1.2)",
+                          : "scale(0.95)",
                     }}
                   />
                 </div>
@@ -93,3 +93,4 @@ export default function BrandCarousel() {
     </section>
   );
 }
+
