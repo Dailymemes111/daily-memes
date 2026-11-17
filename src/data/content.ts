@@ -14,7 +14,7 @@ What really helped me stand out was developing my own unique "try not to laugh" 
     { value: "465+", label: "Videos Posted" },
   ],
 
-    brands: [
+brands: [
     {
       name: "Nickelodeon",
       logo: "/logos/Nickelodeon new.png",
@@ -40,8 +40,12 @@ What really helped me stand out was developing my own unique "try not to laugh" 
       logo: "/logos/hailuo-ai.png",
       logoClassName: "h-20 w-44 object-contain",
     },
+    {
+      name: "Coverd",
+      logo: "/logos/coverd.png",
+      logoClassName: "h-20 w-44 object-contain",
+    },
   ],
-
 
   // Replace with actual TikTok embed URLs once provided
   topVideos: [
