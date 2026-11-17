@@ -10,7 +10,7 @@ import Image from "next/image";
 const BrandIcon = {
   instagram: (props: { className?: string }) => (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="http://w3.org"
       className={props.className}
       viewBox="0 0 640 640"
       aria-hidden
@@ -36,12 +36,12 @@ const BrandIcon = {
     </svg>
   ),
   x: (props: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+    <svg xmlns="http://w3.org" viewBox="0 0 640 640">
       <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
     </svg>
   ),
   tiktok: (props: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+    <svg xmlns="http://w3.org" viewBox="0 0 640 640">
       <path d="M544.5 273.9C500.5 274 457.5 260.3 421.7 234.7L421.7 413.4C421.7 446.5 411.6 478.8 392.7 506C373.8 533.2 347.1 554 316.1 565.6C285.1 577.2 251.3 579.1 219.2 570.9C187.1 562.7 158.3 545 136.5 520.1C114.7 495.2 101.2 464.1 97.5 431.2C93.8 398.3 100.4 365.1 116.1 336C131.8 306.9 156.1 283.3 185.7 268.3C215.3 253.3 248.6 247.8 281.4 252.3L281.4 342.2C266.4 337.5 250.3 337.6 235.4 342.6C220.5 347.6 207.5 357.2 198.4 369.9C189.3 382.6 184.4 398 184.5 413.8C184.6 429.6 189.7 444.8 199 457.5C208.3 470.2 221.4 479.6 236.4 484.4C251.4 489.2 267.5 489.2 282.4 484.3C297.3 479.4 310.4 469.9 319.6 457.2C328.8 444.5 333.8 429.1 333.8 413.4L333.8 64L421.8 64C421.7 71.4 422.4 78.9 423.7 86.2C426.8 102.5 433.1 118.1 442.4 131.9C451.7 145.7 463.7 157.5 477.6 166.5C497.5 179.6 520.8 186.6 544.6 186.6L544.6 274z" />
     </svg>
   ),
@@ -60,8 +60,8 @@ export default function Footer() {
   const email = siteData.contact?.email || siteData.contactEmail;
   const whatsappHref =
     siteData.social?.whatsapp ||
-    `https://wa.me/${siteData.contact?.whatsappNumber || "37067863770"}`;
-  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `https://wa.me{siteData.contact?.whatsappNumber || "37067863770"}`;
+  const mapsHref = `https://google.com{encodeURIComponent(
     siteData.business?.address || "Vilnius, Lithuania",
   )}`;
 
@@ -71,8 +71,8 @@ export default function Footer() {
 
       <div className="relative mx-auto w-full max-w-[1500px] px-6 py-10 md:px-8 lg:py-12">
         <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] backdrop-blur-xl md:p-8">
-          <div className=" grid gap-8 lg:grid-cols-[1.05fr_1fr_0.95fr]">
-            <div className="">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_1fr_0.95fr]">
+            <div>
               <Image
                 src="/logos/logo.png"
                 alt={`${siteData.name} logo`}
@@ -84,7 +84,10 @@ export default function Footer() {
               />
 
               <p className="max-w-sm text-sm text-textMuted md:text-[15px]">
-                {siteData.tagline}
+                {siteData.tagline}{" "}
+                <span className="font-semibold text-textPrimary">
+                  {siteData.taglineSub}
+                </span>
               </p>
             </div>
 
@@ -123,7 +126,7 @@ export default function Footer() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-black/30 px-3 py-2 text-sm text-textPrimary transition hover:-translate-y-0.5 hover:border-[#1DA1F2]/60 hover:bg-[#1DA1F2]/10"
                 >
-                  <span className="h-5 w-5">
+                  <span className="h-5 w-5 fill-current">
                     <BrandIcon.x className="h-5 w-5" />
                   </span>
                   <span className="text-[#5EC5FF]">X</span>
@@ -135,7 +138,7 @@ export default function Footer() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-black/30 px-3 py-2 text-sm text-textPrimary transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/8"
                 >
-                  <span className="h-5 w-5">
+                  <span className="h-5 w-5 fill-current">
                     <BrandIcon.tiktok className="h-5 w-5" />
                   </span>
                   <span className="text-white">TikTok</span>
@@ -145,12 +148,12 @@ export default function Footer() {
 
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-textPrimary">
-                Contact Us
+                Contact
               </p>
-              <div className="flex flex-col gap-3">
+              <div className="space-y-3 text-sm text-textMuted">
                 <a
                   href={`mailto:${email}`}
-                  className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-textMuted transition hover:border-accent/40 hover:bg-accent/8 hover:text-textPrimary"
+                  className="flex items-center gap-2.5 text-textPrimary transition hover:text-accent"
                 >
                   <EnvelopeIcon className="h-5 w-5 text-accent" />
                   <span>{email}</span>
@@ -160,41 +163,24 @@ export default function Footer() {
                   href={whatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-textMuted transition hover:border-[#25D366]/50 hover:bg-[#25D366]/10 hover:text-textPrimary"
+                  className="flex items-center gap-2.5 text-textPrimary transition hover:text-[#25D366]"
                 >
-                  <span className="h-5 w-5">
-                    <WhatsAppIcon className="h-5 w-5" />
-                  </span>
-                  <span>
-                    {siteData.contact?.whatsappNumber || "+37067863770"}
-                  </span>
+                  <WhatsAppIcon className="h-5 w-5" />
+                  <span>{siteData.contact?.whatsappNumber || "+37067863770"}</span>
                 </a>
 
                 <a
                   href={mapsHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-textMuted transition hover:border-accent/40 hover:bg-accent/8 hover:text-textPrimary"
+                  className="flex items-center gap-2.5 transition hover:text-textPrimary"
                 >
                   <MapPinIcon className="h-5 w-5 text-accent" />
-                  <span>
-                    {siteData.business?.address || "Vilnius, Lithuania"}
-                  </span>
+                  <span>{siteData.business?.address || "Vilnius, Lithuania"}</span>
                 </a>
 
-                <p className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-textMuted">
+                <div className="flex items-center gap-2.5">
                   <ClockIcon className="h-5 w-5 text-accent" />
-                  <span>{siteData.business?.hours}</span>
-                </p>
+                  <span>{siteData.business?.hours || "Mon-Fri: 9am-10pm"}</span>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p className="pb-8 text-center text-xs text-textMuted">
-        &copy; {new Date().getFullYear()} {siteData.name}. All rights reserved.
-      </p>
-    </footer>
-  );
-}
